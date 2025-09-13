@@ -9,6 +9,9 @@ size = Vector3(1.35822, 1.08835, 2.20058)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vll1l"]
 size = Vector3(0.418579, 0.569824, 0.833984)
 
+[sub_resource type="Animation" id="Animation_6frnq"]
+length = 0.001
+
 [sub_resource type="Animation" id="2"]
 length = 1.2
 loop_mode = 1
@@ -24,9 +27,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0.329753, 0), Vector3(0, 0.660351, 0), Vector3(0, 0.349734, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_6frnq"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5n6vs"]
 _data = {
