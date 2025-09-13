@@ -1,14 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1757771509
+::res://::1757771757
 export_presets.cfg::TextFile/TextFile::-1::1757771105::0::1::::<><><>0<>0<><>::
 icon.webp::CompressedTexture2D/CompressedTexture2D::27118964165343846::1757760409::1757760419::1::::<><><>0<>0<>2765b228073266418cb0e013965e5088<>res://.godot/imported/icon.webp-e94f9a68b0f625a567a797079e4d325f.ctex::
 Main.gd::GDScript/GDScript::6006119214671426773::1757760409::0::1::::<>Node<><>0<>0<><>::
-Main.tscn::PackedScene::1946344858681233962::1757770732::0::1::::<><><>0<>0<><>::uid://crtn52j421ddd::::res://Main.gd<>uid://dp478jyugrn7o::::res://Player.tscn<>uid://ha0ar5s2c3m4::::res://Mob.tscn<>uid://btmpvppbcwya2::::res://art/663380305-1/Stove Single.glb<>uid://cqquurjk1i7yw::::res://ui_theme.tres<>uid://4yjluvniibt6::::res://ScoreLabel.gd<>uid://cyxhh7ddkn62q::::res://fonts/Montserrat-Medium.ttf<>uid://dd7a1xcb3ps3w::::res://art/663380305-1/Frying Pan.glb
+Main.tscn::PackedScene::1946344858681233962::1757771757::0::1::::<><><>0<>0<><>::uid://crtn52j421ddd::::res://Main.gd<>uid://dp478jyugrn7o::::res://Player.tscn<>uid://ha0ar5s2c3m4::::res://Mob.tscn<>uid://btmpvppbcwya2::::res://art/663380305-1/Stove Single.glb<>uid://cqquurjk1i7yw::::res://ui_theme.tres<>uid://4yjluvniibt6::::res://ScoreLabel.gd<>uid://cyxhh7ddkn62q::::res://fonts/Montserrat-Medium.ttf<>uid://dd7a1xcb3ps3w::::res://art/663380305-1/Frying Pan.glb
 Mob.gd::GDScript/GDScript::8535427333125065800::1757760409::0::1::::<>CharacterBody3D<><>0<>0<><>::
-Mob.tscn::PackedScene::492840770380503333::1757770732::0::1::::<><><>0<>0<><>::uid://dtuvig0tok1xc::::res://Mob.gd<>uid://ccsev7xka3gcq::::res://art/663380305-1/Bread Slice.glb
-MusicPlayer.tscn::PackedScene::5126785503634273502::1757770732::0::1::::<><><>0<>0<><>::uid://c5qpnfga41t4p::::res://art/House In a Forest Loop.ogg
+Mob.tscn::PackedScene::492840770380503333::1757771757::0::1::::<><><>0<>0<><>::uid://dtuvig0tok1xc::::res://Mob.gd<>uid://ccsev7xka3gcq::::res://art/663380305-1/Bread Slice.glb
+MusicPlayer.tscn::PackedScene::5126785503634273502::1757771757::0::1::::<><><>0<>0<><>::uid://c5qpnfga41t4p::::res://art/House In a Forest Loop.ogg
 Player.gd::GDScript::3128695103854940055::1757770272::0::1::::<>CharacterBody3D<><>0<>0<><>::
-Player.tscn::PackedScene::8273964046187778922::1757770732::0::1::::<><><>0<>0<><>::uid://bkttfe33bvmmx::::res://Player.gd<>uid://d0ypm0v45pwdv::::res://art/player.glb<>uid://b608j5y56wsut::::res://art/663380305-1/butter.glb
+Player.tscn::PackedScene::8273964046187778922::1757771757::0::1::::<><><>0<>0<><>::uid://bkttfe33bvmmx::::res://Player.gd<>uid://d0ypm0v45pwdv::::res://art/player.glb<>uid://b608j5y56wsut::::res://art/663380305-1/butter.glb
 README.md::TextFile/TextFile::-1::1757760409::0::1::::<><><>0<>0<><>::
 ScoreLabel.gd::GDScript/GDScript::2085588711777788873::1757760409::0::1::::<>Label<><>0<>0<><>::
 ui_theme.tres::Theme/Theme::5930143872682747302::1757760409::0::1::::<><><>0<>0<><>::uid://cyxhh7ddkn62q::::res://fonts/Montserrat-Medium.ttf
@@ -21,7 +21,7 @@ mob_body.tres::StandardMaterial3D/StandardMaterial3D::-1::1757760409::0::1::::<>
 mob_eye.tres::StandardMaterial3D/StandardMaterial3D::-1::1757760409::0::1::::<><><>0<>0<><>::
 player.glb::PackedScene/PackedScene::8964461739428881931::1757760409::1757760420::1::::<><><>0<>0<>888faf6ae4281eadd09c6bedcc72b9b7<>res://.godot/imported/player.glb-08dcfb373480a049995065542e37637b.scn::
 pupil.tres::StandardMaterial3D/StandardMaterial3D::-1::1757760409::0::1::::<><><>0<>0<><>::
-::res://art/663380305-1/::1757771193
+::res://art/663380305-1/::1757771510
 Bread Slice.glb::PackedScene/PackedScene::4950659940611579468::1757762473::1757762473::1::::<><><>0<>0<>710ce6fe28b3167509bb2de4e55e5ef7<>res://.godot/imported/Bread Slice.glb-3d3102eb186523f635e84721a964f5dc.scn::
 Butter Character.glb::PackedScene::4866458690710793855::1757762473::1757771510::1::::<><><>0<>0<>ceaf5ca6240ee3d8629506b761efa0ba<>res://.godot/imported/Butter Character.glb-c1da3f2597ddeece3d18d0fd7f8afcb9.scn::uid://bsnxi8od2send::::res://art/663380305-1/Butter Character_100Avatars_083_Butter.png
 Butter Character_100Avatars_083_Butter.png::CompressedTexture2D/CompressedTexture2D::3678069312236245357::1757762473::1757762475::1::::<><><>0<>0<>9327e06f985d633d378bfab072e071e4<>res://.godot/imported/Butter Character_100Avatars_083_Butter.png-c9b7bb8d1a655ecdac7b6af259a99189.s3tc.ctex::
@@ -30,10 +30,11 @@ butter_100Avatars_083_Butter.png::CompressedTexture2D/CompressedTexture2D::90358
 Frying Pan.glb::PackedScene/PackedScene::7435936311974966766::1757764495::1757764496::1::::<><><>0<>0<>e7960dcb1aef8e4af5aa2fddd891d92b<>res://.godot/imported/Frying Pan.glb-03eb6425e60d8d0d2d9412fef1c0b88c.scn::
 Stove Single.glb::PackedScene/PackedScene::3745730313499252395::1757767914::1757767915::1::::<><><>0<>0<>4badc0763177fa06406db3bd4d772a01<>res://.godot/imported/Stove Single.glb-bafa1fe4205a8ac99b91156725a434ea.scn::uid://b0vhl7wwx204e::::res://art/663380305-1/Stove Single_restaurantbits_texture.png
 Stove Single_restaurantbits_texture.png::CompressedTexture2D/CompressedTexture2D::4184940085925792970::1757767915::1757767916::1::::<><><>0<>0<>1d3a828ced5e31dd34baf0c559585f45<>res://.godot/imported/Stove Single_restaurantbits_texture.png-f058d23c084a6bffd0475a953784831a.s3tc.ctex::
-::res://docs/::1757771132
-index.apple-touch-icon.png::CompressedTexture2D/CompressedTexture2D::2207086431017221280::1757771114::1757771132::1::::<><><>0<>0<>5612f9266ab577b66361b27b52219de2<>res://.godot/imported/index.apple-touch-icon.png-b21a756d869f84af832970a74d8371bc.ctex::
-index.icon.png::CompressedTexture2D/CompressedTexture2D::278184682684565980::1757771114::1757771132::1::::<><><>0<>0<>acba64892ea3ce3293b3096f9f73ef54<>res://.godot/imported/index.icon.png-b92c9a802ad4b78e247784454a6b506f.ctex::
-index.png::CompressedTexture2D/CompressedTexture2D::6219553538736079090::1757771114::1757771132::1::::<><><>0<>0<>afafe392e602953a2c9981256eed9aca<>res://.godot/imported/index.png-0c78d14d192abe5f22f8c25928ca1ab8.ctex::
-::res://fonts/::1757760419
+::res://docs/::1757771639
+index.apple-touch-icon.png::CompressedTexture2D/CompressedTexture2D::2207086431017221280::1757771639::1757771132::1::::<><><>0<>0<>5612f9266ab577b66361b27b52219de2<>res://.godot/imported/index.apple-touch-icon.png-b21a756d869f84af832970a74d8371bc.ctex::
+index.icon.png::CompressedTexture2D/CompressedTexture2D::278184682684565980::1757771639::1757771132::1::::<><><>0<>0<>acba64892ea3ce3293b3096f9f73ef54<>res://.godot/imported/index.icon.png-b92c9a802ad4b78e247784454a6b506f.ctex::
+index.png::CompressedTexture2D/CompressedTexture2D::6219553538736079090::1757771639::1757771132::1::::<><><>0<>0<>afafe392e602953a2c9981256eed9aca<>res://.godot/imported/index.png-0c78d14d192abe5f22f8c25928ca1ab8.ctex::
+::res://fonts/::1757772008
 LICENSE.txt::TextFile/TextFile::-1::1757760409::0::1::::<><><>0<>0<><>::
 Montserrat-Medium.ttf::FontFile/FontFile::6505293508080888906::1757760409::1757760419::1::::<><><>0<>0<>07233739ee8ed56ec1cb0f04a4ff2983<>res://.godot/imported/Montserrat-Medium.ttf-e832861e4ad4110e172112dc430c04b0.fontdata::
+paaymaay_regular.ttf::FontFile::536377635941943624::1757772008::1757772009::1::::<><><>0<>0<>2b07b878bc16dbd11470960323e45ca2<>res://.godot/imported/paaymaay_regular.ttf-ab7cd6ce4734ec1142b52eca3f077579.fontdata::
