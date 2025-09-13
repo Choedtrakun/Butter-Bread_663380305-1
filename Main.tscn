@@ -1,0 +1,245 @@
+[gd_scene load_steps=20 format=3 uid="uid://2y3ar4s86yra"]
+
+[ext_resource type="Script" uid="uid://crtn52j421ddd" path="res://Main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dp478jyugrn7o" path="res://Player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://ha0ar5s2c3m4" path="res://Mob.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://btmpvppbcwya2" path="res://art/663380305-1/Stove Single.glb" id="3_trn2v"]
+[ext_resource type="Theme" uid="uid://cqquurjk1i7yw" path="res://ui_theme.tres" id="4_gnyca"]
+[ext_resource type="Script" uid="uid://4yjluvniibt6" path="res://ScoreLabel.gd" id="6"]
+[ext_resource type="FontFile" uid="uid://cyxhh7ddkn62q" path="res://fonts/Montserrat-Medium.ttf" id="6_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://dd7a1xcb3ps3w" path="res://art/663380305-1/Frying Pan.glb" id="7_lgr22"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="2"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i5n5q"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m3njk"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_yutuu"]
+sky_material = SubResource("ProceduralSkyMaterial_m3njk")
+
+[sub_resource type="Environment" id="Environment_0tcge"]
+background_mode = 2
+sky = SubResource("Sky_yutuu")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cr5ed"]
+albedo_color = Color(0.635294, 0.211765, 0.0235294, 1)
+
+[sub_resource type="CylinderMesh" id="3"]
+material = SubResource("StandardMaterial3D_cr5ed")
+radial_segments = 24
+rings = 1
+
+[sub_resource type="Curve3D" id="5"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 21.1142, 0.22774, 20.4802, 0, 0, 0, 0, 0, 0, 0.091609, -0.126828, 20.6864, 0, 0.4, 0.1, 0, -0.4, -0.1, 0.160281, 0.27203, 0.0728188, 0, 0, 0, 0, 0, 0, 21.5732, 1.25048, -0.375525, 0, 0, 0, 0, 0, 0, 20.7526, -0.53635, 20.7341),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_lgr22"]
+font = ExtResource("6_3dxm6")
+font_size = 18
+font_color = Color(1, 0, 0, 1)
+outline_size = 1
+outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3dxm6"]
+font = ExtResource("6_3dxm6")
+font_size = 25
+font_color = Color(1, 0, 0, 1)
+
+[node name="Main" type="Node"]
+script = ExtResource("1")
+mob_scene = ExtResource("3")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.152334, -1.14984, 1.35149)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("1")
+
+[node name="Root Scene3" parent="Ground" instance=ExtResource("3_trn2v")]
+transform = Transform3D(31.715, 0, 0, 0, 31.715, 0, 0, 0, 31.715, 0, -38.915, 0)
+
+[node name="Root Scene" parent="Ground" instance=ExtResource("7_lgr22")]
+transform = Transform3D(-6.71735e-06, -153.675, -6.71735e-06, 0, -6.71735e-06, 153.675, -153.675, 6.71735e-06, 2.93625e-13, 17.724, 2.909, 0.75)
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Ground"]
+visible = false
+mesh = SubResource("2")
+
+[node name="Walls" type="StaticBody3D" parent="."]
+editor_description = "These invisible walls are used to prevent the player from escaping the playable area.
+
+These walls use WorldBoundaryShape3D collision shapes, which are infinitely large planes
+(even though they look finite in the editor)."
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.359518, -0.0065136, 5.03783)
+visible = false
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(0.923879, -0.382683, -1.67276e-08, 0, -4.37114e-08, 1, -0.382683, -0.923879, -4.03841e-08, 6.521, 10, 8.116)
+shape = SubResource("WorldBoundaryShape3D_i5n5q")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(0.920505, 0.390731, 1.70794e-08, 0, -4.37114e-08, 1, 0.390731, -0.920505, -4.02365e-08, -4.286, 10, 8.7741)
+shape = SubResource("WorldBoundaryShape3D_i5n5q")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(-0.382683, -0.92388, 4.03841e-08, 0, -4.37114e-08, -1, 0.92388, -0.382683, 1.67276e-08, 12.752, 10, -0.208)
+shape = SubResource("WorldBoundaryShape3D_i5n5q")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(0.382683, -0.92388, 4.03841e-08, 0, -4.37114e-08, -1, 0.92388, 0.382683, -1.67276e-08, 11.49, 10, -8.261)
+shape = SubResource("WorldBoundaryShape3D_i5n5q")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(-1.67276e-08, -0.382683, 0.92388, 1, -4.37114e-08, 0, 4.03841e-08, 0.92388, 0.382683, 4.74456, 10.0559, -14.7652)
+shape = SubResource("WorldBoundaryShape3D_i5n5q")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(1.67276e-08, 0.382683, 0.92388, 1, -4.37114e-08, 0, 4.03841e-08, 0.92388, -0.382683, -6.99229, 10.0136, -13.9106)
+shape = SubResource("WorldBoundaryShape3D_i5n5q")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(4.05285e-08, 0.927184, 0.374607, 1, -4.37114e-08, 0, 1.63746e-08, 0.374607, -0.927184, -12.3472, 9.99376, -5.69511)
+shape = SubResource("WorldBoundaryShape3D_i5n5q")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(4.05285e-08, 0.927184, -0.374606, 1, -4.37114e-08, 0, -1.63746e-08, -0.374606, -0.927184, -12.683, 10, -1.299)
+shape = SubResource("WorldBoundaryShape3D_i5n5q")
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, -0.777049, 0.382355, 0, 0.441506, 0.897258, -0.866025, -0.448629, 0.220753, 0, 12.5592, 14.7757)
+shadow_enabled = true
+shadow_bias = 0.04
+shadow_blur = 1.5
+directional_shadow_mode = 0
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 40.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0tcge")
+
+[node name="Player" parent="." instance=ExtResource("2")]
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.183514, 0, 0)
+
+[node name="Camera" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 9.53674e-07, 19)
+projection = 1
+fov = 48.6
+size = 24.0
+far = 40.0
+
+[node name="Cylinders" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+visible = false
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.79585, 1.254, -15.2599)
+mesh = SubResource("3")
+
+[node name="MeshInstance3" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1, -15)
+mesh = SubResource("3")
+
+[node name="MeshInstance2" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1, 16)
+mesh = SubResource("3")
+
+[node name="MeshInstance4" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 16)
+mesh = SubResource("3")
+
+[node name="SpawnPath" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+curve = SubResource("5")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-0.00980794, 0, 0.999951, 0, 1, 0, -0.999951, 0, -0.00980794, -12.4477, 0.22774, -11.5109)
+rotation_mode = 1
+cubic_interp = false
+loop = false
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_gnyca")
+
+[node name="ScoreLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 77.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Score: 0"
+script = ExtResource("6")
+
+[node name="Retry" type="ColorRect" parent="UserInterface"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.447059)
+
+[node name="Label" type="Label" parent="UserInterface/Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -13.0
+offset_right = 75.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Press Space or Enter to retry"
+
+[node name="Name" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 1031.0
+offset_top = 10.0
+offset_right = 1300.0
+offset_bottom = 35.0
+text = "663380305-1"
+label_settings = SubResource("LabelSettings_lgr22")
+
+[node name="Label" type="Label" parent="UserInterface/Name"]
+layout_mode = 0
+offset_left = -220.0
+offset_top = -9.0
+offset_right = -2.0
+offset_bottom = 25.0
+text = "นายเชิดตระกูล แข็งขัน "
+label_settings = SubResource("LabelSettings_3dxm6")
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
